@@ -1,0 +1,28 @@
+Laravel 5.8 Tutorial From Scratch
+----------------------------------------------
+
+YouTubeChannel: CodersTape
+
+Link: https://www.youtube.com/channel/UCQI-Ym2rLZx52vEoqlPQMdg
+
+---------------------------------------------
+
+SourceCode: https://github.com/coderstape/laravel-58-from-scratch
+
+Database: sqlite    (Geen MySQL database)
+
+Mail_host: https://mailtrap.io    (Zie .env file voor mail en database info)
+
+
+---------------------------------------------
+
+Afspeellijst uitgevoerd van:
+
+Laravel 5.8 Tutorial From Scratch - e01 - Installation
+T/M
+Laravel 5.8 Tutorial From Scratch - e42 - Lazy Loading vs. Eager Loading (Fixing N + 1 Problem)
+
+(Behalve de Deploy tuts heb ik niet gedaan!!)
+
+
+
