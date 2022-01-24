@@ -1,6 +1,0 @@
-Database: sqlite  
-
-Mail_host: https://mailtrap.io    (Zie .env file voor mail en database info)
-
-
-
