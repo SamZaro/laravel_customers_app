@@ -12,15 +12,10 @@ use Intervention\Image\Facades\Image;
 
 class CustomersController extends Controller
 {
-
-
     public function __construct() 
     {
-        $this->middleware('auth');
-         
-        
+        $this->middleware('auth');       
     }
-
 
     public function index() 
     {
@@ -28,7 +23,6 @@ class CustomersController extends Controller
 
         return view('customers.index', compact('customers'));
     }
-
 
     public function create()
     {
@@ -38,30 +32,22 @@ class CustomersController extends Controller
         return view('customers.create', compact('companies', 'customer'));
     }
 
-
     public function store() 
     {
         $this->authorize('create', Customer::class);
-
         $customer = Customer::create($this->validateRequest());
-
         $this->storeImage($customer);
-
         event(new NewCustomerHasRegisteredEvent($customer));
-
-       
+        
         return redirect('customers');
-
     }
 
     public function show(Customer $customer)
     {
-
-        return view('customers.show', compact('customer'));
+       return view('customers.show', compact('customer'));
     }
 
-
-
+    
     public function edit(Customer $customer)
     {
         $companies = Company::all();
@@ -69,16 +55,14 @@ class CustomersController extends Controller
         return view('customers.edit', compact('customer', 'companies'));
     }
 
-
+    
     public function update(Customer $customer)
     {
-
         $customer->update($this->validateRequest());
 
         $this->storeImage($customer);
         
         return redirect('customers/' . $customer->id);
-        
     }
 
 
@@ -92,13 +76,8 @@ class CustomersController extends Controller
         
     }
 
-
-
-
     private function validateRequest()
     {
-
-
         return request()->validate([
             'name' => 'required|min:3',
             'email' => 'required|email',
@@ -106,9 +85,7 @@ class CustomersController extends Controller
             'company_id' => 'required',
             'image' => 'sometimes|file|image|max:5000',  
         ]);
-
     }
-
 
     private function storeImage($customer)
     {
@@ -120,9 +97,5 @@ class CustomersController extends Controller
             $image->save();
         }
     }
-
-
 }
-
-
 
